@@ -1,103 +1,51 @@
-package by.itacademy.JavaAutomation.Task1.Calculator;
 
-import java.util.InputMismatchException;
-import java.util.Scanner;
 
-import static java.lang.System.*;
-
-public class Calculator {
-    private static double valueOne, valueTwo;
-    private static char operation;
-
-    public static void setValueOne() {
-        Calculator.valueOne = Calculator.inputValue();
-    }
-
-    public static void setOperation() {
-        Calculator.operation = Calculator.inputOperation();
-    }
-
-    public static void setValueTwo() {
-        Calculator.valueTwo = Calculator.inputValue();
-    }
-
-    private static double inputValue() {
-        double value = 0;
-        boolean successfulInput = false;
-        do {
-            try {
-                out.println("Enter a number: ");
-                Scanner scanner = new Scanner(System.in);
-                value = scanner.nextDouble();
-                if (value == 0 && operation == '/'){
-                    out.println("It's prohibited to divide by 0. Your input is not correct. Please try again.");
-                } else if (Double.isNaN(value) || Double.isInfinite(value)) {
-                    typeIncorrect();
-                } else {
-                    successfulInput = true;
-                }
-            } catch (InputMismatchException e) {
-                typeIncorrect();
+    public class Calculator {
+        private static boolean correctResult = true;
+        public static String calculateResult(double numberOne, double numberTwo, char operation) {
+            double result = 0;
+            String resultOfCalculation;
+            switch (operation) {
+                case '+' -> result = add(numberOne, numberTwo);
+                case '-' -> result = subtract(numberOne, numberTwo);
+                case '*' -> result = multiply(numberOne, numberTwo);
+                case '/' -> result = divide(numberOne, numberTwo);
             }
-        } while (!successfulInput);
-         return value;
-    }
+            if (correctResult) {
+                resultOfCalculation = Double.toString(result);
+            } else resultOfCalculation = "Result is beyond the limits";
+            return resultOfCalculation;
+        }
 
+        private static double add(double numberOne, double numberTwo) {
+            double result = 0;
+            if (Double.isInfinite(numberOne+numberTwo)) {
+                correctResult = false;
+            } else result = numberOne + numberTwo;
+            return result;
+        }
 
-    private static char inputOperation() {
-        char operation;
-        boolean successfulInput = false;
-        do {
-                out.println("Enter arithmetic operation '+' '-' '*' '/': ");
-                Scanner scanner = new Scanner(System.in);
-                operation = scanner.next().charAt(0);
-                if (operation == '+' || operation == '-' || operation == '/' || operation == '*') {
-                    successfulInput = true;
-                } else {
-                    typeIncorrect();
-                }
-            } while (!successfulInput);
-        return operation;
-    }
+        private static double subtract(double numberOne, double numberTwo) {
+            double result = 0;
+            if (Double.isInfinite(numberOne-numberTwo)) {
+                correctResult = false;
+            } else result = numberOne - numberTwo;
+            return result;
+        }
 
-    private static void typeIncorrect() {
-        out.println("Your input is not correct. Please try again");
-    }
+        private static double multiply(double numberOne, double numberTwo) {
+            double result = 0;
+            if (Double.isInfinite(numberOne*numberTwo)) {
+                correctResult = false;
+            } else result = numberOne * numberTwo;
+            return result;
+        }
 
-    public static void calculateResult() {
-        switch (operation){
-            case '+' ->  add();
-            case '-' ->  subtract();
-            case '*' ->  multiply();
-            case '/' ->  divide();
+        private static double divide(double numberOne, double numberTwo) {
+            double result = 0;
+            if (Double.isInfinite(numberOne/numberTwo)) {
+                correctResult = false;
+            } else result = numberOne / numberTwo;
+            return result;
         }
     }
-
-    private static void add() {
-        checkAndPrintResult(valueOne+valueTwo);
-    }
-
-    private static void subtract() {
-        checkAndPrintResult(valueOne-valueTwo);
-    }
-
-    private static void multiply() {
-        checkAndPrintResult(valueOne*valueTwo);
-    }
-
-    private static void divide() {
-        checkAndPrintResult(valueOne/valueTwo);
-    }
-
-    private static void checkAndPrintResult(double result){
-        if(Double.isNaN(result) || Double.isInfinite(result))
-            out.println("Result is beyond limits. Please try again");
-        else out.println("Your result is: \n" + result);
-    }
-}
-
-
-
-
-
-
