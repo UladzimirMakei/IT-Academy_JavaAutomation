@@ -3,6 +3,7 @@ package com.it_academy.onliner.framework;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.remote.RemoteWebDriver;
+
 import java.time.Duration;
 
 public class WebDriverDiscovery {

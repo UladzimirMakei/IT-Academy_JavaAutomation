@@ -1,57 +1,54 @@
 package com.it_academy.selenium.Tests;
 
+import com.it_academy.onliner.pageobject.OnlinerHomePage;
 import org.junit.jupiter.api.Test;
+
+import java.util.List;
 import java.util.Objects;
 
-import static com.it_academy.onliner.pageobject.CatalogPage.*;
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
 public class OnlinerAccessoriesSectionTest extends BaseTest {
-
+    private final OnlinerHomePage ONLINER_HOME_PAGE = new OnlinerHomePage();
 
     @Test
-    public void testComponentsSectionTitleAndDescriptionIsVisible() {
-        List <String>  = onlinerHomePage
+    public void testAccessorySectionHasCorrectNumberOfObjectsAndAllHaveTitles() {
+        List<String> AccessoriesTitles = ONLINER_HOME_PAGE
                 .clickOnHeaderLink("Каталог")
                 .clickOnCatalogSectionLink("Компьютеры и\u00a0сети")
-                .getProductTitles();
-        softAssertions.assertThat(productTitles)
-                .as("Product title is not displayed")
-                .isNotEmpty();
-        Collection<String> productDescriptions = catalogPage.getProductDescriptions();
-        AssertionsForInterfaceTypes.assertThat(productDescriptions)
-                .as("Product description is not displayed")
-                .isNotEmpty();
-    }
-    /*@Test
-    public void testNumberOfElementsAccessorySectionIsCorrect() {
-        assertThat(AccessoriesObjectNameList.size()).
-                withFailMessage("Onliner Accessory section contains incorrect number of objects")
-                .isEqualTo(NUMBER_OF_ACCESSORY_OBJECTS);
+                .clickOnAccessoriesSectionLink()
+                .getAccessoryItemsNames();
+        assertThat(AccessoriesTitles.size()).as("").isEqualTo(NUMBER_OF_ACCESSORY_OBJECTS);
+        assertThat(AccessoriesTitles.stream().allMatch(Objects::nonNull))
+                .as("Product title is not displayed").isTrue();
     }
 
     @Test
-    public void testNameOfElementsAccessorySectionIsNotNull() {
-        assertThat(AccessoriesSectionElementsList.stream().allMatch(Objects::nonNull)).
-                withFailMessage("Onliner Accessory section all elements name is not Null").isTrue();
-    }
-
-    @Test
-    public void testPriceAndNumberOfElementsAccessorySectionIsNotNull() {
-        assertThat(AccessoriesSectionPricesAndNumberOfElementsList.stream().allMatch(Objects::nonNull)).
-                withFailMessage("Onliner Accessory section all elements prices and numbers of objects is not Null")
-                .isTrue();
-    }
-
-    @Test
-    public void testAccessoriesObjectsContainsSpecificInfo() {
-        assertThat(AccessoriesSectionElementsList.stream().map(AccessoryObject::getObjectInfo).
+    public void testAccessorySectionHasCorrectNumberOfObjects() {
+        List<String> AccessoriesTitles = ONLINER_HOME_PAGE
+                .clickOnHeaderLink("Каталог")
+                .clickOnCatalogSectionLink("Компьютеры и\u00a0сети")
+                .clickOnAccessoriesSectionLink()
+                .getAccessoryItemsNames();
+        assertThat(AccessoriesTitles.stream().allMatch(Objects::nonNull))
+                .as("Product title is not displayed").isTrue();
+        assertThat(AccessoriesTitles.stream().
                 anyMatch(t -> t.contains("Видеокарты"))).withFailMessage("").isTrue();
-        assertThat(AccessoriesSectionElementsList.stream().map(AccessoryObject::getObjectInfo).
+    }
+
+    @Test
+    public void testAccessorySectionObjectsHaveAmountAndPrices() {
+        List<String> AccessoriesSectionPriceAndNumberList = ONLINER_HOME_PAGE
+                .clickOnHeaderLink("Каталог")
+                .clickOnCatalogSectionLink("Компьютеры и\u00a0сети")
+                .clickOnAccessoriesSectionLink()
+                .getAccessoryNumberAndPrices();
+        System.out.println(AccessoriesSectionPriceAndNumberList);
+        assertThat(AccessoriesSectionPriceAndNumberList.stream().
                 allMatch(t -> t.contains("товар"))).withFailMessage("").isTrue();
-        assertThat(AccessoriesSectionElementsList.stream().map(AccessoryObject::getObjectInfo).
+        assertThat(AccessoriesSectionPriceAndNumberList.stream().
                 allMatch(t -> t.contains("от"))).withFailMessage("").isTrue();
-        assertThat(AccessoriesSectionElementsList.stream().map(AccessoryObject::getObjectInfo).
+        assertThat(AccessoriesSectionPriceAndNumberList.stream().
                 allMatch(t -> t.contains("р."))).withFailMessage("").isTrue();
-    }*/
+    }
 }

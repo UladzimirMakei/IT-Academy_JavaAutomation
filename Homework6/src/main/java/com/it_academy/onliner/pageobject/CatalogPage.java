@@ -2,7 +2,6 @@ package com.it_academy.onliner.pageobject;
 
 import com.it_academy.onliner.framework.BasePage;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 import java.util.ArrayList;
@@ -11,28 +10,26 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class CatalogPage extends BasePage {
-    private static final String CATALOG_ITEM_TITLE =
-            "//*[@class = 'catalog-navigation-classifier__item-title-wrapper']";
+
     private static final String CATALOG_CLASSIFIER_LINK_XPATH_PATTERN =
             "//span[@class='catalog-navigation-classifier__item-title-wrapper'][contains(.,'%s')]";
-    private static final String CATALOG_COMP_AND_NET_LINK_XPATH_PATTERN =
-            "//div[@class='catalog-navigation-list__aside-title'][contains(.,'%s')]";
+
+    private static final String ACCESSORIES_XPATH_LINK =
+            "//div[@class='catalog-navigation-list__aside-title'][contains(.,'Комплектующие')]";
+
+    private static final String CATALOG_ACCESSORY_TITLE_XPATH_LINK =
+            "//*[@id='container']/div/div/div/div/div[1]/div[4]/div/div[3]/div[1]/div/div[2]/div[2]/div/a/span/span[2]";
+
+    private static final String CATALOG_ACCESSORY_PRICES_NUM_XPATH_LINK =
+            "//*[@id='container']/div/div/div/div/div[1]/div[4]/div/div[3]/div[1]/div/div[2]/div[2]/div/a/span/span[3]";
 
     private static final String CATALOG_MENU_ITEM_TITLE =
-           // "//li[contains(@class,  'catalog-navigation-classifier__item')]";
-           "//*[@id='container']/div/div/div/div/div[1]/div[4]/div/div[3]/div[1]/div/div";
-    private static final String CATALOG_CLASSIFIER_CATEGORY_XPATH_PATTERN =
-            "//*[@class='catalog-navigation-list__aside-title' and contains(text(), '%s')]";
-    private static final String PRODUCT_TITLE =
-            "//div[@class='catalog-navigation-list__aside-title' and contains(text(),"
-                    + " 'Комплектующие') and not (contains(text(), 'Комплектующие для'))]"
-                    + "//following-sibling::div[@class='catalog-navigation-list__dropdown']"
-                    + "//a//*[contains(@class, 'title')]";
-    private static final String PRODUCT_DESCRIPTION =
-            "//div[@class='catalog-navigation-list__aside-title' and contains(text(),"
-                    + " 'Комплектующие') and not (contains(text(), 'Комплектующие для'))]"
-                    + "//following-sibling::div[@class='catalog-navigation-list__dropdown']"
-                    + "//a//*[contains(@class, 'description') and contains(text(), 'товар')]";
+            // "//li[contains(@class,  'catalog-navigation-classifier__item')]";
+            "//*[@id='container']/div/div/div/div/div[1]/ul/li/span[2]";
+
+    private static final String CATALOG_COMP_AND_NET_ITEM_TITLE =
+            // "//li[contains(@class,  'catalog-navigation-classifier__item')]";
+            "//*[@id='container']/div/div/div/div/div[1]/div[4]/div/div[3]/div[1]/div/div";
 
     private static Collection<String> catalogItemTitles() {
         Collection<String> collection = new ArrayList<>();
@@ -45,7 +42,6 @@ public class CatalogPage extends BasePage {
         collection.add("Красота и спорт");
         collection.add("Детям и мамам");
         collection.add("Работа и офис");
-        //collection.add("Еда");
         return collection;
     }
 
@@ -57,6 +53,7 @@ public class CatalogPage extends BasePage {
         collection.add("Сетевое оборудование");
         return collection;
     }
+
     public Collection<String> getCatalogItemTitlesCollection() {
         return catalogItemTitles();
     }
@@ -65,36 +62,24 @@ public class CatalogPage extends BasePage {
         return computersAndNetworksMenuItems();
     }
 
-    /*public List<String> getCatalogItemTitle() {
-        return getTextsFromWebElements(waitForElementsVisible(By.xpath
-                (CATALOG_ITEM_TITLE)));
-    }*/
-
     public List<String> getCatalogItemTitle() {
         return getTextsFromWebElements(driver.findElements(By.xpath(CATALOG_MENU_ITEM_TITLE)));
     }
 
     public List<String> getCompAndNetItemTitle() {
-        return getTextsFromWebElements(driver.findElements(By.xpath(CATALOG_MENU_ITEM_TITLE)));
-    }
-    /*public CatalogPage clickOnCatalogClassifierLink(String link) {
-       By.xpath(String.format(CATALOG_CLASSIFIER_LINK_XPATH_PATTERN, link))
-                .click();
-        return this;
+        return getTextsFromWebElements(driver.findElements(By.xpath(CATALOG_COMP_AND_NET_ITEM_TITLE)));
     }
 
-    public CatalogPage selectCategory(String category) {
-                By.xpath(String.format(CATALOG_CLASSIFIER_CATEGORY_XPATH_PATTERN, category))
-                .click();
-        return this;
-    }*/
+    public List<String> getAccessoryItemsNames() {
+        return getTextsFromWebElements(driver.findElements(By.xpath(CATALOG_ACCESSORY_TITLE_XPATH_LINK)));
+    }
+
+    public List<String> getAccessoryNumberAndPrices() {
+        return getTextsFromWebElements(driver.findElements(By.xpath(CATALOG_ACCESSORY_PRICES_NUM_XPATH_LINK)));
+    }
 
     public List<String> getTextsFromWebElements(List<WebElement> elements) {
         return elements.stream().map(e -> e.getText()).collect(Collectors.toList());
-    }
-
-    public static boolean isCatalogContainsSpecificElement(List<String> WebElement, String Element) {
-        return WebElement.contains(Element);
     }
 
     public CatalogPage clickOnCatalogSectionLink(String link) {
@@ -103,9 +88,17 @@ public class CatalogPage extends BasePage {
         return new CatalogPage();
     }
 
+    public CatalogPage clickOnAccessoriesSectionLink() {
+        WebElement element = driver.findElement(By.xpath(ACCESSORIES_XPATH_LINK));
+        element.click();
+        return new CatalogPage();
+    }
+
+
     public boolean isCompAndNetSideMenuDisplayed() {
         WebElement element = driver.findElement(
                 By.xpath("//*[@id='container']/div/div/div/div/div[1]/div[4]/div/div[3]/div[1]/div"));
         return element.isDisplayed();
     }
+
 }
