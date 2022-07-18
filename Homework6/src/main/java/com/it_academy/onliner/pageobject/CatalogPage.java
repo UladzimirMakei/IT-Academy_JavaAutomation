@@ -14,22 +14,8 @@ public class CatalogPage extends BasePage {
     private static final String CATALOG_CLASSIFIER_LINK_XPATH_PATTERN =
             "//span[@class='catalog-navigation-classifier__item-title-wrapper'][contains(.,'%s')]";
 
-    private static final String ACCESSORIES_XPATH_LINK =
-            "//div[@class='catalog-navigation-list__aside-title'][contains(.,'Комплектующие')]";
-
-    private static final String CATALOG_ACCESSORY_TITLE_XPATH_LINK =
-            "//*[@id='container']/div/div/div/div/div[1]/div[4]/div/div[3]/div[1]/div/div[2]/div[2]/div/a/span/span[2]";
-
-    private static final String CATALOG_ACCESSORY_PRICES_NUM_XPATH_LINK =
-            "//*[@id='container']/div/div/div/div/div[1]/div[4]/div/div[3]/div[1]/div/div[2]/div[2]/div/a/span/span[3]";
-
-    private static final String CATALOG_MENU_ITEM_TITLE =
-            // "//li[contains(@class,  'catalog-navigation-classifier__item')]";
-            "//*[@id='container']/div/div/div/div/div[1]/ul/li/span[2]";
-
-    private static final String CATALOG_COMP_AND_NET_ITEM_TITLE =
-            // "//li[contains(@class,  'catalog-navigation-classifier__item')]";
-            "//*[@id='container']/div/div/div/div/div[1]/div[4]/div/div[3]/div[1]/div/div";
+    private static final String COMP_AND_NET_SIDE_MENU_LINK_XPATH_PATTERN =
+            "//div[@class='catalog-navigation-list__aside-title'][contains(.,'%s')]";
 
     private static Collection<String> catalogItemTitles() {
         Collection<String> collection = new ArrayList<>();
@@ -62,20 +48,8 @@ public class CatalogPage extends BasePage {
         return computersAndNetworksMenuItems();
     }
 
-    public List<String> getCatalogItemTitle() {
-        return getTextsFromWebElements(driver.findElements(By.xpath(CATALOG_MENU_ITEM_TITLE)));
-    }
-
-    public List<String> getCompAndNetItemTitle() {
-        return getTextsFromWebElements(driver.findElements(By.xpath(CATALOG_COMP_AND_NET_ITEM_TITLE)));
-    }
-
-    public List<String> getAccessoryItemsNames() {
-        return getTextsFromWebElements(driver.findElements(By.xpath(CATALOG_ACCESSORY_TITLE_XPATH_LINK)));
-    }
-
-    public List<String> getAccessoryNumberAndPrices() {
-        return getTextsFromWebElements(driver.findElements(By.xpath(CATALOG_ACCESSORY_PRICES_NUM_XPATH_LINK)));
+    public List<String> getListOfItemsFromWebElementByXPath(String XPath) {
+        return getTextsFromWebElements(driver.findElements(By.xpath(XPath)));
     }
 
     public List<String> getTextsFromWebElements(List<WebElement> elements) {
@@ -88,8 +62,9 @@ public class CatalogPage extends BasePage {
         return new CatalogPage();
     }
 
-    public CatalogPage clickOnAccessoriesSectionLink() {
-        WebElement element = driver.findElement(By.xpath(ACCESSORIES_XPATH_LINK));
+    public CatalogPage clickOnAccessoriesSectionLink(String link) {
+        WebElement element = driver.findElement
+                (By.xpath(String.format(COMP_AND_NET_SIDE_MENU_LINK_XPATH_PATTERN, link)));
         element.click();
         return new CatalogPage();
     }

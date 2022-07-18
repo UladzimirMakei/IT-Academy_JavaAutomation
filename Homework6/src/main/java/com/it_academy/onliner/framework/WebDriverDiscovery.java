@@ -9,7 +9,7 @@ import java.time.Duration;
 public class WebDriverDiscovery {
 
     private static final ThreadLocal<RemoteWebDriver> remoteWebDriver =
-            new ThreadLocal<>();
+            new ThreadLocal();
 
     public WebDriverDiscovery() {
         if (remoteWebDriver.get() == null) {
