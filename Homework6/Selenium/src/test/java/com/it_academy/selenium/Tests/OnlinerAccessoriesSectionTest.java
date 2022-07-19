@@ -1,6 +1,7 @@
 package com.it_academy.selenium.Tests;
 
 import com.it_academy.onliner.pageobject.OnlinerHomePage;
+import org.assertj.core.api.SoftAssertions;
 import org.junit.jupiter.api.*;
 import java.util.List;
 import java.util.Objects;
@@ -10,6 +11,7 @@ import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 public class OnlinerAccessoriesSectionTest extends BaseTest {
     private final OnlinerHomePage ONLINER_HOME_PAGE = new OnlinerHomePage();
     private final int NUMBER_OF_ACCESSORY_OBJECTS = 14;
+    private final SoftAssertions SOFT_ASSERTIONS = new SoftAssertions();
 
     @Test
     public void testAccessorySectionHasCorrectNumberOfObjectsAndAllHaveTitles() {
@@ -18,9 +20,9 @@ public class OnlinerAccessoriesSectionTest extends BaseTest {
                 .clickOnCatalogSectionLink("Компьютеры и\u00a0сети")
                 .clickOnAccessoriesSectionLink("Комплектующие")
                 .getProductTitleFromAccessorySectionList();
-        assertThat(AccessoriesTitles.size()).
+        SOFT_ASSERTIONS.assertThat(AccessoriesTitles.size()).
                 as("Accessory section has invalid number of products").isEqualTo(NUMBER_OF_ACCESSORY_OBJECTS);
-        assertThat(AccessoriesTitles.stream().allMatch(Objects::nonNull))
+        SOFT_ASSERTIONS.assertThat(AccessoriesTitles.stream().allMatch(Objects::nonNull))
                 .as("Accessory products' titles are not displayed").isTrue();
     }
 
@@ -31,9 +33,9 @@ public class OnlinerAccessoriesSectionTest extends BaseTest {
                 .clickOnCatalogSectionLink("Компьютеры и\u00a0сети")
                 .clickOnAccessoriesSectionLink("Комплектующие")
                 .getProductTitleFromAccessorySectionList();
-        assertThat(AccessoriesTitles.stream().allMatch(Objects::nonNull))
+        SOFT_ASSERTIONS.assertThat(AccessoriesTitles.stream().allMatch(Objects::nonNull))
                 .as("Accessory products' titles are not displayed").isTrue();
-        assertThat(AccessoriesTitles.stream().
+        SOFT_ASSERTIONS.assertThat(AccessoriesTitles.stream().
                 anyMatch(t -> t.contains("Видеокарты"))).withFailMessage("").isTrue();
     }
 
@@ -44,13 +46,13 @@ public class OnlinerAccessoriesSectionTest extends BaseTest {
                 .clickOnCatalogSectionLink("Компьютеры и\u00a0сети")
                 .clickOnAccessoriesSectionLink("Комплектующие")
                 .getProductAmountAndPriceFromAccessorySectionList();
-        assertThat(AccessoriesSectionPriceAndNumberList.stream().
+        SOFT_ASSERTIONS.assertThat(AccessoriesSectionPriceAndNumberList.stream().
                 allMatch(t -> t.contains("товар"))).
                 withFailMessage("Accessory section does not have section amount of product").isTrue();
-        assertThat(AccessoriesSectionPriceAndNumberList.stream().
+        SOFT_ASSERTIONS.assertThat(AccessoriesSectionPriceAndNumberList.stream().
                 allMatch(t -> t.contains("от"))).
                 withFailMessage("Accessory section does not have section price").isTrue();
-        assertThat(AccessoriesSectionPriceAndNumberList.stream().
+        SOFT_ASSERTIONS.assertThat(AccessoriesSectionPriceAndNumberList.stream().
                 allMatch(t -> t.contains("р."))).
                 withFailMessage("Accessory section does not have section price").isTrue();
     }

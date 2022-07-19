@@ -15,7 +15,6 @@ public class OnlinerCatalogSectionsTest extends BaseTest {
         List<String> onlinerCatalogElements = ONLINER_HOME_PAGE
                 .clickOnHeaderLink("Каталог")
                 .getCatalogItemsList();
-        System.out.println(onlinerCatalogElements);
         assertThat(onlinerCatalogElements
                 .containsAll(CATALOG_PAGE.getCatalogItemTitlesCollection()))
                 .as("Onliner catalog section does not contain required titles")
