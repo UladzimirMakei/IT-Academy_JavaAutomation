@@ -1,9 +1,10 @@
 package com.it_academy.onliner.pageobject;
 
+import com.codeborne.selenide.CollectionCondition;
+import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
 
 import java.time.Duration;
-import java.util.List;
 
 import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selenide.$$x;
@@ -15,18 +16,18 @@ public class OnlinerHomePage {
     private static final String MAIN_NAVIGATION_ONLINER_HEADER_AUTOMARKET_LINK =
             "//div[@class='b-main-navigation__dropdown-title'][contains(.,'Автобарахолка')]";
     private static final String MAIN_NAVIGATION_ONLINER_HEADER_AUTOMARKET_OBJECTS_LINK =
-            "//li[contains(@class, 'b-main-navigation__dropdown-advert-item')]";
+            "//span[contains(@class, 'b-main-navigation__dropdown-advert-sign')]";
     private static final String MAIN_NAVIGATION_ONLINER_HEADER_HOUSE_FLAT_LINK =
             "//div[@class='b-main-navigation__dropdown-title'][contains(.,'Продажа')]";
     private static final String MAIN_NAVIGATION_ONLINER_HEADER_HOUSE_FLAT_OBJECTS_LINK =
-            "//li[contains(@class, 'b-main-navigation__dropdown-advert-item')]";
+            "//span[contains(@class, 'b-main-navigation__dropdown-advert-sign')]";
 
     public OnlinerHomePage hoverOnHeaderLink(String link) {
         $x(String.format(MAIN_NAVIGATION_ONLINER_HEADER_PATTERN, link)).hover();
         return this;
     }
 
-    public SelenideElement isAutoMarketDropdownMenuDisplayed() {
+    public SelenideElement isCarMarketDropdownMenuDisplayed() {
         return $x(MAIN_NAVIGATION_ONLINER_HEADER_AUTOMARKET_LINK).
                 shouldBe(visible, Duration.ofSeconds(10));
     }
@@ -36,17 +37,13 @@ public class OnlinerHomePage {
                 shouldBe(visible, Duration.ofSeconds(10));
     }
 
-    public List<String> getListOfAutoMarketDropdownItems() {
-        System.out.println($$x(MAIN_NAVIGATION_ONLINER_HEADER_AUTOMARKET_OBJECTS_LINK).
-                texts());
+    public ElementsCollection getListOfAutoMarketDropdownItems(String string) {
         return $$x(MAIN_NAVIGATION_ONLINER_HEADER_AUTOMARKET_OBJECTS_LINK).
-                texts();
+                shouldHave(CollectionCondition.containExactTextsCaseSensitive(string));
     }
 
-    public List<String> getListOfHouseAndFlatDropdownItems() {
-        System.out.println($$x(MAIN_NAVIGATION_ONLINER_HEADER_HOUSE_FLAT_OBJECTS_LINK).
-                texts());
+    public ElementsCollection getListOfHouseAndFlatDropdownItems(String string) {
         return $$x(MAIN_NAVIGATION_ONLINER_HEADER_HOUSE_FLAT_OBJECTS_LINK).
-                texts();
+                shouldHave(CollectionCondition.containExactTextsCaseSensitive(string));
     }
 }

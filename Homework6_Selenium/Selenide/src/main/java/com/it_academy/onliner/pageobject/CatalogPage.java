@@ -1,5 +1,7 @@
 package com.it_academy.onliner.pageobject;
 
+import com.codeborne.selenide.CollectionCondition;
+import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
 
 import java.time.Duration;
@@ -7,6 +9,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
+import static com.codeborne.selenide.CollectionCondition.size;
 import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selenide.*;
 
@@ -34,8 +37,9 @@ public class CatalogPage {
                     + "//following-sibling::div[@class='catalog-navigation-list__dropdown']"
                     + "//a//*[contains(@class, 'description') and contains(text(), 'товар')]";
 
-    private static Collection<String> catalogItemTitles() {
-        Collection<String> collection = new ArrayList<>();
+
+    private static List<String> catalogItemTitles() {
+        List<String> collection = new ArrayList<>();
         collection.add("Электроника");
         collection.add("Компьютеры и сети");
         collection.add("Бытовая техника");
@@ -48,8 +52,8 @@ public class CatalogPage {
         return collection;
     }
 
-    private static Collection<String> computersAndNetworksMenuItems() {
-        Collection<String> collection = new ArrayList<>();
+    private static List<String> computersAndNetworksMenuItems() {
+        List<String> collection = new ArrayList<>();
         collection.add("Ноутбуки, компьютеры, мониторы");
         collection.add("Комплектующие");
         collection.add("Хранение данных");
@@ -65,17 +69,33 @@ public class CatalogPage {
         return computersAndNetworksMenuItems();
     }
 
-    public List<String> getCatalogItemsList() {
-        return $$x(CATALOG_MENU_ITEM_TITLE).texts();
+    public ElementsCollection doesCatalogItemsListContainListOfTitles() {
+        return $$x(CATALOG_MENU_ITEM_TITLE).
+                shouldHave(CollectionCondition.containExactTextsCaseSensitive(catalogItemTitles()));
     }
 
-    public List<String> getComputerAndNetSideMenuItemsList() {
-        return $$x(CATALOG_COMP_AND_NET_SIDE_MENU_LINK).texts();
+    public ElementsCollection doesCatalogItemsListContainSpecificTitle(String string) {
+        return $$x(CATALOG_MENU_ITEM_TITLE).
+                shouldHave(CollectionCondition.containExactTextsCaseSensitive(string));
+    }
+
+    public ElementsCollection doesComputerAndNetSideMenuContainListOfTitles() {
+        return $$x(CATALOG_COMP_AND_NET_SIDE_MENU_LINK).
+                shouldHave(CollectionCondition.containExactTextsCaseSensitive(computersAndNetworksMenuItems()));
     }
 
     public List<String> getProductTitleFromAccessorySectionList() {
         return $$x(CATALOG_ACCESSORY_TITLE_XPATH_LINK).texts();
     }
+
+    public ElementsCollection checkNumberOfDisplayedAccessoryObjects(int number) {
+        return $$x(CATALOG_ACCESSORY_TITLE_XPATH_LINK).shouldHave(size(number));
+    }
+
+    public ElementsCollection checkDisplayedAccessoryTitlesAreNotEmpty() {
+        return $$x(CATALOG_ACCESSORY_TITLE_XPATH_LINK).shouldBe(CollectionCondition.empty);
+    }
+
 
     public List<String> getProductAmountAndPriceFromAccessorySectionList() {
         return $$x(CATALOG_ACCESSORY_PRICES_NUM_XPATH_LINK).texts();
