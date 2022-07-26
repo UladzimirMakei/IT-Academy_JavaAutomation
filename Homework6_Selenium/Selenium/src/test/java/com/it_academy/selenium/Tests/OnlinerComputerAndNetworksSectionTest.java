@@ -8,11 +8,11 @@ import java.util.List;
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
 public class OnlinerComputerAndNetworksSectionTest extends BaseTest {
-    private final OnlinerHomePage ONLINER_HOME_PAGE = new OnlinerHomePage();
+    private final OnlinerHomePage onlinerHomePage = new OnlinerHomePage();
 
     @Test
     public void testOnlinerCatalogContainsSpecificSection() {
-        boolean isCompAndNetSideMenuDisplayed = ONLINER_HOME_PAGE
+        boolean isCompAndNetSideMenuDisplayed = onlinerHomePage
                 .clickOnHeaderLink("Каталог")
                 .clickOnCatalogSectionLink("Компьютеры и\u00a0сети")
                 .isCompAndNetSideMenuDisplayed();
@@ -23,7 +23,7 @@ public class OnlinerComputerAndNetworksSectionTest extends BaseTest {
 
     @Test
     public void testOnlinerCatalogCompAndNetContainsSpecificSection() {
-        List<String> onlinerCatalogCompAndNetElement = ONLINER_HOME_PAGE
+        List<String> onlinerCatalogCompAndNetElement = onlinerHomePage
                 .clickOnHeaderLink("Каталог")
                 .clickOnCatalogSectionLink("Компьютеры и\u00a0сети")
                 .getComputerAndNetSideMenuItemsList();

@@ -8,11 +8,11 @@ import java.util.List;
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
 public class OnlinerCatalogSectionsTest extends BaseTest {
-    private final OnlinerHomePage ONLINER_HOME_PAGE = new OnlinerHomePage();
+    private final OnlinerHomePage onlinerHomePage = new OnlinerHomePage();
 
     @Test
     public void testOnlinerCatalogContainsSpecificSection() {
-        List<String> onlinerCatalogElements = ONLINER_HOME_PAGE
+        List<String> onlinerCatalogElements = onlinerHomePage
                 .clickOnHeaderLink("Каталог")
                 .getCatalogItemsList();
         assertThat(onlinerCatalogElements
@@ -23,7 +23,7 @@ public class OnlinerCatalogSectionsTest extends BaseTest {
 
     @Test
     public void testOnlinerCatalogContainsFoodSection() {
-        List<String> onlinerCatalogElements = ONLINER_HOME_PAGE
+        List<String> onlinerCatalogElements = onlinerHomePage
                 .clickOnHeaderLink("Каталог")
                 .getCatalogItemsList();
         assertThat(onlinerCatalogElements.contains("Eда"))

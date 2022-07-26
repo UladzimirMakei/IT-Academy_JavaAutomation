@@ -4,14 +4,15 @@ import com.codeborne.selenide.CollectionCondition;
 import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
 
-import java.time.Duration;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
+import static com.codeborne.selenide.CollectionCondition.*;
 import static com.codeborne.selenide.CollectionCondition.size;
 import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selenide.*;
+import static java.time.Duration.*;
 
 public class CatalogPage {
 
@@ -71,17 +72,17 @@ public class CatalogPage {
 
     public ElementsCollection doesCatalogItemsListContainListOfTitles() {
         return $$x(CATALOG_MENU_ITEM_TITLE).
-                shouldHave(CollectionCondition.containExactTextsCaseSensitive(catalogItemTitles()));
+                shouldHave(containExactTextsCaseSensitive(catalogItemTitles()));
     }
 
     public ElementsCollection doesCatalogItemsListContainSpecificTitle(String string) {
         return $$x(CATALOG_MENU_ITEM_TITLE).
-                shouldHave(CollectionCondition.containExactTextsCaseSensitive(string));
+                shouldHave(containExactTextsCaseSensitive(string));
     }
 
     public ElementsCollection doesComputerAndNetSideMenuContainListOfTitles() {
         return $$x(CATALOG_COMP_AND_NET_SIDE_MENU_LINK).
-                shouldHave(CollectionCondition.containExactTextsCaseSensitive(computersAndNetworksMenuItems()));
+                shouldHave(containExactTextsCaseSensitive(computersAndNetworksMenuItems()));
     }
 
     public List<String> getProductTitleFromAccessorySectionList() {
@@ -113,6 +114,6 @@ public class CatalogPage {
 
     public SelenideElement isCompAndNetSideMenuDisplayed() {
         return $x("//*[@id='container']/div/div/div/div/div[1]/div[4]/div/div[3]/div[1]/div").
-                shouldBe(visible, Duration.ofSeconds(10));
+                shouldBe(visible, ofSeconds(10));
     }
 }

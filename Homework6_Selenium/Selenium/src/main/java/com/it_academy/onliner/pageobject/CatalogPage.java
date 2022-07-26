@@ -9,6 +9,8 @@ import java.util.Collection;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import static java.util.stream.Collectors.*;
+
 public class CatalogPage extends BasePage {
 
     private static final String CATALOG_CLASSIFIER_LINK_XPATH_PATTERN =
@@ -83,7 +85,7 @@ public class CatalogPage extends BasePage {
     }
 
     public List<String> getTextsFromWebElements(List<WebElement> elements) {
-        return elements.stream().map(e -> e.getText()).collect(Collectors.toList());
+        return elements.stream().map(e -> e.getText()).collect(toList());
     }
 
     public CatalogPage clickOnCatalogSectionLink(String link) {
