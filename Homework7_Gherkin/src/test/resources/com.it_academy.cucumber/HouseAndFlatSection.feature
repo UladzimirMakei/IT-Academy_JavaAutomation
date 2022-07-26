@@ -6,7 +6,7 @@ Feature: As a user, I want to get ability to use the drop-down menu of the "До
     Given the user opens Onliner website
     When the user hovers over "Дома и квартиры" section
     Then "Дома и квартиры" drop-down menu is displayed
-    And "Дома и квартиры" drop-down menu contains '<specific>' data
+    Then "Дома и квартиры" drop-down menu contains '<specific>' data
     Examples:
       |specific|
       |Минск|

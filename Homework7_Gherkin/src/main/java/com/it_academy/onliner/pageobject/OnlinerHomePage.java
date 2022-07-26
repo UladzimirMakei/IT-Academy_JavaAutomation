@@ -1,14 +1,14 @@
 package com.it_academy.onliner.pageobject;
 
-import com.codeborne.selenide.CollectionCondition;
 import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
 
-import java.time.Duration;
 
+import static com.codeborne.selenide.CollectionCondition.*;
 import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selenide.$$x;
 import static com.codeborne.selenide.Selenide.$x;
+import static java.time.Duration.*;
 
 public class OnlinerHomePage {
     private static final String MAIN_NAVIGATION_ONLINER_HEADER_PATTERN =
@@ -29,21 +29,21 @@ public class OnlinerHomePage {
 
     public SelenideElement isCarMarketDropdownMenuDisplayed() {
         return $x(MAIN_NAVIGATION_ONLINER_HEADER_AUTOMARKET_LINK).
-                shouldBe(visible, Duration.ofSeconds(10));
+                shouldBe(visible, ofSeconds(10));
     }
 
     public SelenideElement isHouseAndFlatDropdownMenuDisplayed() {
         return $x(MAIN_NAVIGATION_ONLINER_HEADER_HOUSE_FLAT_LINK).
-                shouldBe(visible, Duration.ofSeconds(10));
+                shouldBe(visible, ofSeconds(10));
     }
 
     public ElementsCollection getListOfAutoMarketDropdownItems(String string) {
         return $$x(MAIN_NAVIGATION_ONLINER_HEADER_AUTOMARKET_OBJECTS_LINK).
-                shouldHave(CollectionCondition.containExactTextsCaseSensitive(string));
+                shouldHave(containExactTextsCaseSensitive(string));
     }
 
     public ElementsCollection getListOfHouseAndFlatDropdownItems(String string) {
         return $$x(MAIN_NAVIGATION_ONLINER_HEADER_HOUSE_FLAT_OBJECTS_LINK).
-                shouldHave(CollectionCondition.containExactTextsCaseSensitive(string));
+                shouldHave(containExactTextsCaseSensitive(string));
     }
 }
