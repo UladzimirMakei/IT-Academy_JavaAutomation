@@ -9,7 +9,8 @@ import org.junit.jupiter.api.BeforeEach;
 public class BaseTest {
 
     private final static OnlinerHomePage ONLINER_HOME_PAGE = new OnlinerHomePage();
-    protected final CatalogPage CATALOG_PAGE = new CatalogPage();
+    protected final OnlinerHomePage onlinerHomePage = new OnlinerHomePage();
+    protected final CatalogPage catalogPage = new CatalogPage();
 
     @BeforeEach
     public void navigateToOnliner() {
