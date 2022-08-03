@@ -7,10 +7,12 @@ import com.codeborne.selenide.SelenideElement;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
+import java.util.Objects;
 
 import static com.codeborne.selenide.CollectionCondition.*;
 import static com.codeborne.selenide.CollectionCondition.size;
 import static com.codeborne.selenide.Condition.*;
+import static com.codeborne.selenide.Condition.empty;
 import static com.codeborne.selenide.Selenide.*;
 import static java.time.Duration.*;
 
@@ -93,10 +95,10 @@ public class CatalogPage {
         return $$x(CATALOG_ACCESSORY_TITLE_XPATH_LINK).shouldHave(size(number));
     }
 
-    public ElementsCollection checkDisplayedAccessoryTitlesAreNotEmpty() {
-        return $$x(CATALOG_ACCESSORY_TITLE_XPATH_LINK).shouldBe(CollectionCondition.empty);
+    public boolean checkDisplayedAccessoryTitlesAreNotEmpty() {
+        return $$x(CATALOG_ACCESSORY_TITLE_XPATH_LINK)
+                .stream().allMatch(e -> !e.getText().isEmpty());
     }
-
 
     public List<String> getProductAmountAndPriceFromAccessorySectionList() {
         return $$x(CATALOG_ACCESSORY_PRICES_NUM_XPATH_LINK).texts();

@@ -97,7 +97,7 @@ public class CatalogPage {
 
     public boolean checkDisplayedAccessoryTitlesAreNotEmpty() {
         return $$x(CATALOG_ACCESSORY_TITLE_XPATH_LINK)
-                .stream().allMatch(Objects::nonNull);
+                .stream().allMatch(e -> !e.getText().isEmpty());
     }
 
     public List<String> getProductAmountAndPriceFromAccessorySectionList() {
