@@ -1,9 +1,11 @@
 package com.it_academy.selenide;
 
+
 import com.it_academy.onliner.pageobject.OnlinerHomePage;
+
 import org.junit.jupiter.api.Test;
 
-public class CatalogComputerAndNetworksSectionTest extends BaseTest {
+public class CatalogComputerAndNetworksSectionTest extends BaseTest{
     private final OnlinerHomePage onlinerHomePage = new OnlinerHomePage();
 
     @Test

@@ -17,7 +17,7 @@
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-java</artifactId>
-            <version>4.2.1</version>
+            <version>4.3.0</version>
         </dependency>
         <dependency>
             <groupId> org.junit.jupiter</groupId>
@@ -64,7 +64,7 @@
         <dependency>
             <groupId>com.codeborne</groupId>
             <artifactId>selenide</artifactId>
-            <version>6.6.3</version>
+            <version>6.6.6</version>
         </dependency>
         <dependency>
             <groupId>io.rest-assured</groupId>
@@ -84,7 +84,7 @@
         <dependency>
             <groupId>io.github.bonigarcia</groupId>
             <artifactId>webdrivermanager</artifactId>
-            <version>5.2.0</version>
+            <version>5.2.1</version>
         </dependency>
         <dependency>
             <groupId>org.apache.commons</groupId>
@@ -100,6 +100,7 @@
                 <version>3.0.0-M5</version>
                 <configuration>
                     <systemPropertyVariables>
+                        <!--suppress UnresolvedMavenProperty -->
                         <webdriver.chrome.driver>${chrome.driver.path}</webdriver.chrome.driver>
                     </systemPropertyVariables>
                 </configuration>
