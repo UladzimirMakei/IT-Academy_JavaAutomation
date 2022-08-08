@@ -6,11 +6,20 @@ public class CapabilityFactory {
     public DesiredCapabilities capabilities;
 
     public DesiredCapabilities getCapabilities(String browser) {
-        if (browser.equals("firefox")) {
-            capabilities = OptionsManager.getFirefoxDesiredCapabilities();
-        } else if(browser.equals("edge")) {
-            capabilities = OptionsManager.getEdgeDesiredCapabilities();
-        } else capabilities = OptionsManager.getChromeDesiredCapabilities();
+        switch (browser) {
+            case ("firefox"): {
+                capabilities = OptionsManager.getFirefoxDesiredCapabilities();
+                break;
+            }
+            case ("edge"): {
+                capabilities = OptionsManager.getEdgeDesiredCapabilities();
+                break;
+            }
+            default: {
+                capabilities = OptionsManager.getChromeDesiredCapabilities();
+                break;
+            }
+        }
         return capabilities;
     }
 }

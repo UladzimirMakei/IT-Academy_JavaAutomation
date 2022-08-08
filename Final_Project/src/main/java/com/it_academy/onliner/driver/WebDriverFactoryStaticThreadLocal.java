@@ -11,15 +11,22 @@ public class WebDriverFactoryStaticThreadLocal {
     private static ThreadLocal<WebDriver> driver = new ThreadLocal<>();
 
     public static void setDriver(String browser) {
-        if (browser.equals("firefox")) {
-            WebDriverManager.firefoxdriver().setup();
-            driver.set(new FirefoxDriver());
-        } else if (browser.equals("edge")) {
-            WebDriverManager.edgedriver().setup();
-            driver.set(new EdgeDriver());
-        } else {
-            WebDriverManager.chromedriver().setup();
-            driver.set(new ChromeDriver());
+        switch (browser) {
+            case ("firefox"): {
+                WebDriverManager.firefoxdriver().setup();
+                driver.set(new FirefoxDriver());
+                break;
+            }
+            case ("edge"): {
+                WebDriverManager.edgedriver().setup();
+                driver.set(new EdgeDriver());
+                break;
+            }
+            default: {
+                WebDriverManager.chromedriver().setup();
+                driver.set(new ChromeDriver());
+                break;
+            }
         }
     }
 
