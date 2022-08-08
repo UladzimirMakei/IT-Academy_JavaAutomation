@@ -1,0 +1,8 @@
+com\it_academy\onliner\pageobject\OnlinerHomePage.class
+com\it_academy\onliner\rest_api\service\SushiveslaProductService.class
+com\it_academy\onliner\rest_api\endpoints\OnlinerEndpoints.class
+com\it_academy\onliner\pageobject\CatalogPage.class
+com\it_academy\onliner\rest_api\utils\ResponseBodyUtils.class
+com\it_academy\onliner\rest_api\utils\GetRequestUtils.class
+com\it_academy\onliner\rest_api\model\SushiveslaProduct.class
+com\it_academy\onliner\framework\PropertiesReader.class
