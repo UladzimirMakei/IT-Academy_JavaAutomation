@@ -1,13 +1,19 @@
 package com.it_academy.selenide;
 
+import com.codeborne.selenide.junit5.SoftAssertsExtension;
+import com.it_academy.listeners.AllureListener;
 import com.it_academy.onliner.pageobject.CatalogPage;
-
+import io.qameta.allure.Description;
+import io.qameta.allure.Step;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.util.ArrayList;
 import java.util.List;
 
+@ExtendWith(AllureListener.class)
+@ExtendWith(SoftAssertsExtension.class)
 public class CatalogComputerAndNetworksSectionTest extends BaseTest {
     private final CatalogPage catalogPage = new CatalogPage();
 
@@ -31,12 +37,16 @@ public class CatalogComputerAndNetworksSectionTest extends BaseTest {
     }
 
     @Test
-    public void testOnlinerCatalogContainsSpecificSection() {
+    @Step("Catalog side-menu 'Computers and Networks' is diplayed when is section is clicked")
+    @Description("Check catalog side-menu 'Computers and Networks' is visible when is clicked")
+    public void testCatalogSideMenuComputersAndNetworksDisplayed() {
         catalogPage
                 .isCompAndNetSideMenuDisplayed("Комплектующие");
     }
 
     @Test
+    @Step("'Computers and Networks' in Catalog section contains specific titles")
+    @Description("Check 'Computers and Networks' side-menu contains required sections")
     public void testOnlinerCatalogCompAndNetContainsSpecificSection() {
         catalogPage
                 .verifyComputerAndNetSideMenuContainListOfTitles(getExpectedCatalogItemTitles());

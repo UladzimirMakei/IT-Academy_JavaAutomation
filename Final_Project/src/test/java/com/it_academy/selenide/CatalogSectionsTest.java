@@ -1,12 +1,18 @@
 package com.it_academy.selenide;
 
+import com.codeborne.selenide.junit5.SoftAssertsExtension;
+import com.it_academy.listeners.AllureListener;
 import com.it_academy.onliner.pageobject.CatalogPage;
-
+import io.qameta.allure.Description;
+import io.qameta.allure.Step;
 import org.junit.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.util.ArrayList;
 import java.util.List;
 
+@ExtendWith(AllureListener.class)
+@ExtendWith(SoftAssertsExtension.class)
 public class CatalogSectionsTest extends BaseTest {
     private final CatalogPage catalogPage = new CatalogPage();
 
@@ -29,12 +35,16 @@ public class CatalogSectionsTest extends BaseTest {
     }
 
     @Test
+    @Step("Header in Catalog section contains specific titles")
+    @Description("Check catalog header contains required sections")
     public void testOnlinerCatalogContainsSpecificSection() {
         catalogPage
                 .verifyCatalogItemsListContainListOfTitles(getExpectedCatalogItemTitles());
     }
 
     @Test
+    @Step("Header in Catalog section contains title 'Еда'")
+    @Description("Check catalog header contains required 'Еда' section")
     public void testOnlinerCatalogContainsFoodSection() {
         catalogPage
                 .verifyCatalogItemsListContainSpecificTitle("Еда");

@@ -13,7 +13,7 @@ public class OnlinerHomePage  {
         return new CatalogPage();
     }
 
-    public static String getOnlinerWebsite() {
+    public static String getOnlinerUrl() {
         return getEndpointProperty("onliner");
     }
 }
