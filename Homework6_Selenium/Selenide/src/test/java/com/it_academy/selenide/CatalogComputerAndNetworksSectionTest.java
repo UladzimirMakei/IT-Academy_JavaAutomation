@@ -1,26 +1,44 @@
 package com.it_academy.selenide;
 
+import com.it_academy.onliner.pageobject.CatalogPage;
 
-import com.it_academy.onliner.pageobject.OnlinerHomePage;
-
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-public class CatalogComputerAndNetworksSectionTest extends BaseTest{
-    private final OnlinerHomePage onlinerHomePage = new OnlinerHomePage();
+import java.util.ArrayList;
+import java.util.List;
+
+public class CatalogComputerAndNetworksSectionTest extends BaseTest {
+    private final CatalogPage catalogPage = new CatalogPage();
+
+    private static List<String> computersAndNetworksMenuItems() {
+        List<String> collection = new ArrayList<>();
+        collection.add("Ноутбуки, компьютеры, мониторы");
+        collection.add("Комплектующие");
+        collection.add("Хранение данных");
+        collection.add("Сетевое оборудование");
+        return collection;
+    }
+
+    private List<String> getExpectedCatalogItemTitles() {
+        return computersAndNetworksMenuItems();
+    }
+
+    @BeforeEach
+    public void navigateToComputersAndNetwork() {
+        catalogPage
+                .clickOnCatalogSectionLink("Компьютеры и\u00a0сети");
+    }
 
     @Test
     public void testOnlinerCatalogContainsSpecificSection() {
-        onlinerHomePage
-                .clickOnHeaderLink("Каталог")
-                .clickOnCatalogSectionLink("Компьютеры и\u00a0сети")
-                .isCompAndNetSideMenuDisplayed();
+        catalogPage
+                .isCompAndNetSideMenuDisplayed("Комплектующие");
     }
 
     @Test
     public void testOnlinerCatalogCompAndNetContainsSpecificSection() {
-        onlinerHomePage
-                .clickOnHeaderLink("Каталог")
-                .clickOnCatalogSectionLink("Компьютеры и\u00a0сети")
-                .doesComputerAndNetSideMenuContainListOfTitles();
+        catalogPage
+                .verifyComputerAndNetSideMenuContainListOfTitles(getExpectedCatalogItemTitles());
     }
 }

@@ -17,7 +17,7 @@ public class CatalogSushiveslaProductTest {
                 .getSushiveslaProductItems();
         assertThat(sushiveslaProducts)
                 .as("Some of sushivesla products' names are empty")
-                .allMatch(n -> !n.getName().isEmpty());
+                .allMatch(name -> !name.getName().isEmpty());
     }
 
     @Test

@@ -1,26 +1,27 @@
 package com.it_academy.selenide;
 
-import com.it_academy.onliner.pageobject.OnlinerHomePage;
+import com.it_academy.onliner.pageobject.CatalogPage;
 import org.assertj.core.api.SoftAssertions;
 import org.junit.jupiter.api.*;
 
 import java.util.List;
-import java.util.Objects;
-
-import static org.assertj.core.api.Assertions.assertThat;
 
 public class ComAndNetAccessoriesSectionTest extends BaseTest {
-    private final OnlinerHomePage onlinerHomePage = new OnlinerHomePage();
+    private final CatalogPage catalogPage = new CatalogPage();
     private static final int NUMBER_OF_ACCESSORY_OBJECTS = 14;
+
+    @BeforeEach
+    public void navigateToAccessoriesSection() {
+        catalogPage
+                .clickOnCatalogSectionLink("Компьютеры и\u00a0сети")
+                .clickOnAccessoriesSectionLink("Комплектующие");
+    }
 
     @Test
     public void testAccessorySectionHasCorrectObjects() {
-        SoftAssertions softAssertions = new SoftAssertions();
-        List<String> AccessoriesTitles = onlinerHomePage
-                .clickOnHeaderLink("Каталог")
-                .clickOnCatalogSectionLink("Компьютеры и\u00a0сети")
-                .clickOnAccessoriesSectionLink("Комплектующие")
+        List<String> AccessoriesTitles = catalogPage
                 .getProductTitleFromAccessorySectionList();
+        SoftAssertions softAssertions = new SoftAssertions();
         softAssertions.assertThat(AccessoriesTitles)
                 .as("Accessory products' titles are not displayed")
                 .allMatch(t -> !t.isEmpty());
@@ -32,32 +33,21 @@ public class ComAndNetAccessoriesSectionTest extends BaseTest {
 
     @Test
     public void testAccessorySectionHasCorrectNumberOfObjects() {
-        onlinerHomePage
-                .clickOnHeaderLink("Каталог")
-                .clickOnCatalogSectionLink("Компьютеры и\u00a0сети")
-                .clickOnAccessoriesSectionLink("Комплектующие")
+        catalogPage
                 .checkNumberOfDisplayedAccessoryObjects(NUMBER_OF_ACCESSORY_OBJECTS);
     }
 
     @Test
     public void testAccessorySectionHasCorrectNumberOfObjectsAndAllHaveTitles() {
-        boolean isAccessoryProductsTitleNotEmpty = onlinerHomePage
-                .clickOnHeaderLink("Каталог")
-                .clickOnCatalogSectionLink("Компьютеры и\u00a0сети")
-                .clickOnAccessoriesSectionLink("Комплектующие")
+        catalogPage
                 .checkDisplayedAccessoryTitlesAreNotEmpty();
-        assertThat(isAccessoryProductsTitleNotEmpty).as("Some of accessory products' titles are empty")
-                .isTrue();
     }
 
     @Test
     public void testAccessorySectionObjectsHaveAmountAndPrices() {
-        SoftAssertions softAssertions = new SoftAssertions();
-        List<String> AccessoriesSectionPriceAndNumberList = onlinerHomePage
-                .clickOnHeaderLink("Каталог")
-                .clickOnCatalogSectionLink("Компьютеры и\u00a0сети")
-                .clickOnAccessoriesSectionLink("Комплектующие")
+        List<String> AccessoriesSectionPriceAndNumberList = catalogPage
                 .getProductAmountAndPriceFromAccessorySectionList();
+        SoftAssertions softAssertions = new SoftAssertions();
         softAssertions.assertThat(AccessoriesSectionPriceAndNumberList)
                 .as("Accessory section does not have section amount of product")
                 .allMatch(element -> element.contains("товар"));

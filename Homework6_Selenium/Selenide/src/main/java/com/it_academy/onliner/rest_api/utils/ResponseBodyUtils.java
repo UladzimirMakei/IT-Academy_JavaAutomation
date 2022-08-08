@@ -13,13 +13,6 @@ public class ResponseBodyUtils {
                 .getList(jsonPath, type);
     }
 
-    public static <T> T getObjectByJsonPath(
-            ResponseBody responseBody, String jsonPath, Class<T> type) {
-        return responseBody
-                .jsonPath()
-                .getObject(jsonPath, type);
-    }
-
     public static String getStringJsonValue(ResponseBody responseBody, String jsonPath) {
         return JsonPath.from(responseBody.asString()).getString(jsonPath);
     }

@@ -6,10 +6,10 @@ import java.util.Objects;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class SushiveslaProduct {
-    String id;
-    String key;
-    String name;
-    String full_name;
+    private String id;
+    private String key;
+    private String name;
+    private String full_name;
 
     public String getId() {
         return id;

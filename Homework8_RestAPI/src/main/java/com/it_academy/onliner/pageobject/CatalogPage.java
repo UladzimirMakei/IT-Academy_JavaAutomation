@@ -3,14 +3,13 @@ package com.it_academy.onliner.pageobject;
 import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
 
-import java.util.ArrayList;
-import java.util.Collection;
 import java.util.List;
 
 import static com.codeborne.selenide.CollectionCondition.*;
 import static com.codeborne.selenide.CollectionCondition.size;
 import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selenide.*;
+import static java.lang.String.*;
 import static java.time.Duration.*;
 
 public class CatalogPage {
@@ -25,94 +24,62 @@ public class CatalogPage {
             "//*[@class = 'catalog-navigation-list__category' and @data-id='2']"
                     + "//*[@class = 'catalog-navigation-list__aside-item']";
 
-    private static final String CATALOG_ACCESSORY_TITLE_XPATH_LINK =
-            "//div[@class='catalog-navigation-list__aside-title' and contains(text(),"
+    private final ElementsCollection catalogAccessoryTitleLink =
+            $$x("//div[@class='catalog-navigation-list__aside-title' and contains(text(),"
                     + " 'Комплектующие') and not (contains(text(), 'Комплектующие для'))]"
                     + "//following-sibling::div[@class='catalog-navigation-list__dropdown']"
-                    + "//a//*[contains(@class, 'title')]";
+                    + "//a//*[contains(@class, 'title')]");
 
-    private static final String CATALOG_ACCESSORY_PRICES_NUM_XPATH_LINK =
-            "//div[@class='catalog-navigation-list__aside-title' and contains(text(),"
+    private final ElementsCollection catalogAccessoryPricesNumLink =
+            $$x("//div[@class='catalog-navigation-list__aside-title' and contains(text(),"
                     + " 'Комплектующие') and not (contains(text(), 'Комплектующие для'))]"
                     + "//following-sibling::div[@class='catalog-navigation-list__dropdown']"
-                    + "//a//*[contains(@class, 'description') and contains(text(), 'товар')]";
+                    + "//a//*[contains(@class, 'description') and contains(text(), 'товар')]");
 
-
-    private static List<String> catalogItemTitles() {
-        List<String> collection = new ArrayList<>();
-        collection.add("Электроника");
-        collection.add("Компьютеры и сети");
-        collection.add("Бытовая техника");
-        collection.add("Стройка и ремонт");
-        collection.add("Дом и сад");
-        collection.add("Авто и мото");
-        collection.add("Красота и спорт");
-        collection.add("Детям и мамам");
-        collection.add("Работа и офис");
-        return collection;
-    }
-
-    private static List<String> computersAndNetworksMenuItems() {
-        List<String> collection = new ArrayList<>();
-        collection.add("Ноутбуки, компьютеры, мониторы");
-        collection.add("Комплектующие");
-        collection.add("Хранение данных");
-        collection.add("Сетевое оборудование");
-        return collection;
-    }
-
-    public Collection<String> getCatalogItemTitlesCollection() {
-        return catalogItemTitles();
-    }
-
-    public Collection<String> getComputersAndNetworkMenuItemsCollection() {
-        return computersAndNetworksMenuItems();
-    }
-
-    public ElementsCollection doesCatalogItemsListContainListOfTitles() {
+    public ElementsCollection verifyCatalogItemsListContainListOfTitles(List<String> collection) {
         return $$x(CATALOG_MENU_ITEM_TITLE).
-                shouldHave(containExactTextsCaseSensitive(catalogItemTitles()));
+                shouldHave(containExactTextsCaseSensitive(collection));
     }
 
-    public ElementsCollection doesCatalogItemsListContainSpecificTitle(String string) {
+    public ElementsCollection verifyCatalogItemsListContainSpecificTitle(String string) {
         return $$x(CATALOG_MENU_ITEM_TITLE).
                 shouldHave(containExactTextsCaseSensitive(string));
     }
 
-    public ElementsCollection doesComputerAndNetSideMenuContainListOfTitles() {
+    public ElementsCollection verifyComputerAndNetSideMenuContainListOfTitles(List<String> collection) {
         return $$x(CATALOG_COMP_AND_NET_SIDE_MENU_LINK).
-                shouldHave(containExactTextsCaseSensitive(computersAndNetworksMenuItems()));
+                shouldHave(containExactTextsCaseSensitive(collection));
     }
 
     public List<String> getProductTitleFromAccessorySectionList() {
-        return $$x(CATALOG_ACCESSORY_TITLE_XPATH_LINK).texts();
+        return catalogAccessoryTitleLink.texts();
     }
 
     public ElementsCollection checkNumberOfDisplayedAccessoryObjects(int number) {
-        return $$x(CATALOG_ACCESSORY_TITLE_XPATH_LINK).shouldHave(size(number));
+        return catalogAccessoryTitleLink.shouldHave(size(number));
     }
 
-    public boolean checkDisplayedAccessoryTitlesAreNotEmpty() {
-        return $$x(CATALOG_ACCESSORY_TITLE_XPATH_LINK)
-                .stream().noneMatch(e -> e.getText().isEmpty());
+    public ElementsCollection checkDisplayedAccessoryTitlesAreNotEmpty() {
+        return catalogAccessoryTitleLink
+                .should(noneMatch("", e -> e.getText().isEmpty()));
     }
 
     public List<String> getProductAmountAndPriceFromAccessorySectionList() {
-        return $$x(CATALOG_ACCESSORY_PRICES_NUM_XPATH_LINK).texts();
+        return catalogAccessoryPricesNumLink.texts();
     }
 
     public CatalogPage clickOnCatalogSectionLink(String link) {
-        $x(String.format(CATALOG_CLASSIFIER_LINK_XPATH_PATTERN, link)).click();
+        $x(format(CATALOG_CLASSIFIER_LINK_XPATH_PATTERN, link)).click();
         return new CatalogPage();
     }
 
     public CatalogPage clickOnAccessoriesSectionLink(String link) {
-        $x(String.format(COMP_AND_NET_SIDE_MENU_LINK_XPATH_PATTERN, link)).click();
+        $x(format(COMP_AND_NET_SIDE_MENU_LINK_XPATH_PATTERN, link)).click();
         return new CatalogPage();
     }
 
-    public SelenideElement isCompAndNetSideMenuDisplayed() {
-        return $x("//*[@id='container']/div/div/div/div/div[1]/div[4]/div/div[3]/div[1]/div").
+    public SelenideElement isCompAndNetSideMenuDisplayed(String link) {
+        return $x(format(COMP_AND_NET_SIDE_MENU_LINK_XPATH_PATTERN, link)).
                 shouldBe(visible, ofSeconds(15));
     }
 }
