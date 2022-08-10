@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: com.it_academy.tests.ui.parallel_browsers.local.OnlinerCatalogLocalParallelTest
+-------------------------------------------------------------------------------
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 26.422 s - in com.it_academy.tests.ui.parallel_browsers.local.OnlinerCatalogLocalParallelTest

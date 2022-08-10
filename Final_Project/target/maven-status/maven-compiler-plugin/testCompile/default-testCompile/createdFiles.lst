@@ -1,5 +1,10 @@
-com\it_academy\rest_api\CatalogSushiveslaProductTest.class
-com\it_academy\selenide\ComAndNetAccessoriesSectionTest.class
-com\it_academy\selenide\BaseTest.class
-com\it_academy\selenide\CatalogComputerAndNetworksSectionTest.class
-com\it_academy\selenide\CatalogSectionsTest.class
+com\it_academy\tests\listeners\AllureListener.class
+com\it_academy\tests\ui\parallel_browsers\remote\OnlinerCatalogRemoteParallelTest.class
+com\it_academy\tests\ui\parallel_browsers\remote\selenide\CatalogComputerAndNetworksSectionTest.class
+com\it_academy\tests\rest_api\CatalogSushiveslaProductTest.class
+com\it_academy\tests\utils\ScreenshotUtils.class
+com\it_academy\tests\ui\parallel_browsers\SuiteLocalRemoteParallelExecution.class
+com\it_academy\tests\ui\parallel_browsers\remote\selenide\BaseTest.class
+com\it_academy\tests\ui\parallel_browsers\remote\selenide\CatalogSectionsTest.class
+com\it_academy\tests\ui\parallel_browsers\local\OnlinerCatalogLocalParallelTest.class
+com\it_academy\tests\ui\parallel_browsers\remote\selenide\ComAndNetAccessoriesSectionTest.class

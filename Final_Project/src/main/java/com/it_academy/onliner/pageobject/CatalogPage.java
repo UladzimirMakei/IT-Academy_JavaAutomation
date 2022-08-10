@@ -9,7 +9,6 @@ import static com.codeborne.selenide.CollectionCondition.*;
 import static com.codeborne.selenide.CollectionCondition.size;
 import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selenide.*;
-import static java.lang.String.*;
 import static java.time.Duration.*;
 
 public class CatalogPage {
@@ -59,27 +58,22 @@ public class CatalogPage {
         return catalogAccessoryTitleLink.shouldHave(size(number));
     }
 
-    public ElementsCollection checkDisplayedAccessoryTitlesAreNotEmpty() {
-        return catalogAccessoryTitleLink
-                .should(noneMatch("", e -> e.getText().isEmpty()));
-    }
-
     public List<String> getProductAmountAndPriceFromAccessorySectionList() {
         return catalogAccessoryPricesNumLink.texts();
     }
 
     public CatalogPage clickOnCatalogSectionLink(String link) {
-        $x(format(CATALOG_CLASSIFIER_LINK_XPATH_PATTERN, link)).click();
+        $x(String.format(CATALOG_CLASSIFIER_LINK_XPATH_PATTERN, link)).click();
         return new CatalogPage();
     }
 
     public CatalogPage clickOnAccessoriesSectionLink(String link) {
-        $x(format(COMP_AND_NET_SIDE_MENU_LINK_XPATH_PATTERN, link)).click();
+        $x(String.format(COMP_AND_NET_SIDE_MENU_LINK_XPATH_PATTERN, link)).click();
         return new CatalogPage();
     }
 
     public SelenideElement isCompAndNetSideMenuDisplayed(String link) {
-        return $x(format(COMP_AND_NET_SIDE_MENU_LINK_XPATH_PATTERN, link)).
+        return $x(String.format(COMP_AND_NET_SIDE_MENU_LINK_XPATH_PATTERN, link)).
                 shouldBe(visible, ofSeconds(15));
     }
 }
