@@ -7,6 +7,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="HW4_Parsers" />
+        <module name="Homework4_SQL" />
       </profile>
     </annotationProcessing>
   </component>

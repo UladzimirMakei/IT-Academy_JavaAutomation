@@ -4,9 +4,6 @@
     <list default="true" id="980de90d-6f1e-4442-8553-4b07001cc070" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Calculator.java" beforeDir="false" afterPath="$PROJECT_DIR$/Calculator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CalculatorInputReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/CalculatorInputReader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CalculatorRun.java" beforeDir="false" afterPath="$PROJECT_DIR$/CalculatorRun.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Homework2_JUnit/src/main/java/com/it_academy/calculator/Calculator.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Homework2_JUnit/src/main/java/com/it_academy/calculator/frame/Calculator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Homework2_JUnit/src/main/java/com/it_academy/calculator/CalculatorInputOperationReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Homework2_JUnit/src/main/java/com/it_academy/calculator/frame/CalculatorInputOperationReader.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Homework2_JUnit/src/main/java/com/it_academy/calculator/CalculatorInputValueReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Homework2_JUnit/src/main/java/com/it_academy/calculator/frame/CalculatorInputValueReader.java" afterDir="false" />
@@ -102,7 +99,6 @@
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.0" />
-    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RunManager">
     <configuration name="Unnamed" type="MavenRunConfiguration" factoryName="Maven">

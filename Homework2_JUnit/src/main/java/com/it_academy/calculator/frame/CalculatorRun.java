@@ -1,13 +1,14 @@
+package com.it_academy.calculator.frame;
 
 public class CalculatorRun {
     public static void main(String[] args) {
 
         //ввод числа #1
-        double numberOne = CalculatorInputReader.inputValue();
+        double numberOne = CalculatorInputValueReader.inputValue();
         //ввод арифметических операций
-        char operation = CalculatorInputReader.inputOperation();
+        char operation = CalculatorInputOperationReader.inputOperation();
         //ввод числа #2
-        double numberTwo = CalculatorInputReader.inputValue();
+        double numberTwo = CalculatorInputValueReader.inputValue();
         //вывод результата
         System.out.println(Calculator.calculateResult(numberOne, numberTwo, operation));
 
