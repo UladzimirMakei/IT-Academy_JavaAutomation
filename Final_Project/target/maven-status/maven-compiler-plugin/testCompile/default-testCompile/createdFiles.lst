@@ -1,10 +1,10 @@
 com\it_academy\tests\listeners\AllureListener.class
-com\it_academy\tests\ui\parallel_browsers\remote\OnlinerCatalogRemoteParallelTest.class
-com\it_academy\tests\ui\parallel_browsers\remote\selenide\CatalogComputerAndNetworksSectionTest.class
+com\it_academy\tests\ui\selenide\CatalogSectionsTest.class
 com\it_academy\tests\rest_api\CatalogSushiveslaProductTest.class
 com\it_academy\tests\utils\ScreenshotUtils.class
-com\it_academy\tests\ui\parallel_browsers\SuiteLocalRemoteParallelExecution.class
-com\it_academy\tests\ui\parallel_browsers\remote\selenide\BaseTest.class
-com\it_academy\tests\ui\parallel_browsers\remote\selenide\CatalogSectionsTest.class
-com\it_academy\tests\ui\parallel_browsers\local\OnlinerCatalogLocalParallelTest.class
-com\it_academy\tests\ui\parallel_browsers\remote\selenide\ComAndNetAccessoriesSectionTest.class
+com\it_academy\tests\ui\selenide\ComAndNetAccessoriesSectionTest.class
+com\it_academy\tests\ui\selenide\BaseTest.class
+com\it_academy\tests\ui\remote_parallel_browsers\OnlinerCatalogRemoteParallelTest.class
+com\it_academy\tests\ui\local_parallel_browsers\OnlinerCatalogLocalParallelTest.class
+com\it_academy\tests\ui\selenide\CatalogComputerAndNetworksSectionTest.class
+com\it_academy\tests\ui\SuiteLocalRemoteParallelExecution.class

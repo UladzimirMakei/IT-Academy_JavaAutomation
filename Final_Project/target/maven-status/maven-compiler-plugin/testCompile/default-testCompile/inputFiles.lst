@@ -1,10 +1,10 @@
-D:\Projects\Selenide\src\test\java\com\it_academy\tests\ui\parallel_browsers\local\OnlinerCatalogLocalParallelTest.java
 D:\Projects\Selenide\src\test\java\com\it_academy\tests\rest_api\CatalogSushiveslaProductTest.java
+D:\Projects\Selenide\src\test\java\com\it_academy\tests\ui\selenide\CatalogComputerAndNetworksSectionTest.java
 D:\Projects\Selenide\src\test\java\com\it_academy\tests\utils\ScreenshotUtils.java
-D:\Projects\Selenide\src\test\java\com\it_academy\tests\ui\parallel_browsers\SuiteLocalRemoteParallelExecution.java
-D:\Projects\Selenide\src\test\java\com\it_academy\tests\ui\parallel_browsers\remote\selenide\CatalogSectionsTest.java
-D:\Projects\Selenide\src\test\java\com\it_academy\tests\ui\parallel_browsers\remote\selenide\ComAndNetAccessoriesSectionTest.java
+D:\Projects\Selenide\src\test\java\com\it_academy\tests\ui\selenide\BaseTest.java
+D:\Projects\Selenide\src\test\java\com\it_academy\tests\ui\local_parallel_browsers\OnlinerCatalogLocalParallelTest.java
+D:\Projects\Selenide\src\test\java\com\it_academy\tests\ui\SuiteLocalRemoteParallelExecution.java
+D:\Projects\Selenide\src\test\java\com\it_academy\tests\ui\selenide\CatalogSectionsTest.java
+D:\Projects\Selenide\src\test\java\com\it_academy\tests\ui\selenide\ComAndNetAccessoriesSectionTest.java
 D:\Projects\Selenide\src\test\java\com\it_academy\tests\listeners\AllureListener.java
-D:\Projects\Selenide\src\test\java\com\it_academy\tests\ui\parallel_browsers\remote\OnlinerCatalogRemoteParallelTest.java
-D:\Projects\Selenide\src\test\java\com\it_academy\tests\ui\parallel_browsers\remote\selenide\BaseTest.java
-D:\Projects\Selenide\src\test\java\com\it_academy\tests\ui\parallel_browsers\remote\selenide\CatalogComputerAndNetworksSectionTest.java
+D:\Projects\Selenide\src\test\java\com\it_academy\tests\ui\remote_parallel_browsers\OnlinerCatalogRemoteParallelTest.java

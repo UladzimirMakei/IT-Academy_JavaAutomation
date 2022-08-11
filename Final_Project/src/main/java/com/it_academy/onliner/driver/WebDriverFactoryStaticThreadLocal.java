@@ -30,7 +30,7 @@ public class WebDriverFactoryStaticThreadLocal {
         }
     }
 
-    public static WebDriver getDriver() {
+    public static synchronized WebDriver getDriver() {
         return driver.get();
     }
 

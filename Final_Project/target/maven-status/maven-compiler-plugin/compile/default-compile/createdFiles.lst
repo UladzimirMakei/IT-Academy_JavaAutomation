@@ -1,5 +1,6 @@
 com\it_academy\onliner\driver\WebDriverFactoryStaticThreadRemote.class
 com\it_academy\onliner\pageobject\OnlinerHomePage.class
+com\it_academy\onliner\enums\OnlinerPageUrl.class
 com\it_academy\onliner\rest_api\service\SushiveslaProductService.class
 com\it_academy\onliner\rest_api\endpoints\OnlinerEndpoints.class
 com\it_academy\onliner\driver\WebDriverFactoryStaticThreadLocal.class

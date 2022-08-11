@@ -10,19 +10,20 @@ import org.junit.jupiter.params.provider.CsvSource;
 
 import static com.codeborne.selenide.Selenide.open;
 import static com.codeborne.selenide.WebDriverRunner.setWebDriver;
-import static com.it_academy.onliner.pageobject.OnlinerHomePage.getOnlinerUrl;
+import static com.it_academy.onliner.enums.OnlinerPageUrl.HOME_PAGE;
 
 @Execution(ExecutionMode.CONCURRENT)
 
 public class OnlinerCatalogRemoteParallelTest {
     private final OnlinerHomePage onlinerHomePage = new OnlinerHomePage();
+
     @Disabled
     @ParameterizedTest
     @CsvSource(value = {"chrome", "edge", "firefox"})
     public void testOnlinerCatalogContainsSpecificSectionChrome(String browser) {
         WebDriverFactoryStaticThreadRemote.setDriver(browser);
         setWebDriver(WebDriverFactoryStaticThreadRemote.getDriver());
-        open(getOnlinerUrl());
+        open(HOME_PAGE.getOnlinerUrl());
         onlinerHomePage
                 .clickOnHeaderLink("Каталог")
                 .clickOnCatalogSectionLink("Компьютеры и\u00a0сети")

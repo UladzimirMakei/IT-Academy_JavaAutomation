@@ -1,0 +1,1 @@
+{"uuid":"32729d54-4ac8-41ed-a3d9-78f4c661c94c","name":"[3] firefox","children":["99727fc2-c557-4fab-bd01-c63d9836baef"],"befores":[],"afters":[{"name":"tearDown","status":"passed","stage":"finished","steps":[],"attachments":[],"parameters":[],"start":1660211467570,"stop":1660211468984}],"start":1660211416141,"stop":1660211468989}
