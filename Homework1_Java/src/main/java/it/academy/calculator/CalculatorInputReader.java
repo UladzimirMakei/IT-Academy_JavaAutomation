@@ -1,3 +1,4 @@
+package it.academy.calculator;
 
 import java.util.Scanner;
 

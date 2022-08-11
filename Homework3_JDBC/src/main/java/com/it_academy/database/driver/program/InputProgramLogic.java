@@ -56,6 +56,7 @@ public class InputProgramLogic {
         isBalanceWithinLimit(account, connection);
         return account;
     }
+
     private void isUserExist(User user, Connection connection) throws SQLException {
         if (userQuery.checkUserId(connection).contains(String.valueOf(user.getUserId()))) {
             out.println("You already have account\n" +

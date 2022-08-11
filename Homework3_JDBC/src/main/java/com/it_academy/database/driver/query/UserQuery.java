@@ -1,10 +1,12 @@
 package com.it_academy.database.driver.query;
+
 import com.it_academy.database.driver.tables.User;
 
 import java.sql.*;
 import java.util.ArrayList;
 
 import static com.it_academy.database.driver.service.DriverConnection.*;
+import static java.lang.System.*;
 
 public class UserQuery {
 
@@ -20,7 +22,7 @@ public class UserQuery {
             preparedStatement.setString(3, user.getAddress());
             preparedStatement.executeUpdate();
         } catch (SQLException e) {
-            System.out.println(e.getMessage());
+            out.println(e.getMessage());
         } finally {
             closeStatement(preparedStatement);
         }
@@ -41,7 +43,7 @@ public class UserQuery {
                 }
             }
         } catch (SQLException e) {
-            System.out.println(e.getMessage());
+            out.println(e.getMessage());
         } finally {
             closeStatement(statement);
         }

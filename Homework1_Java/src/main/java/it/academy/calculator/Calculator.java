@@ -1,4 +1,4 @@
-
+package it.academy.calculator;
 
 public class Calculator {
     private static boolean correctResult = true;

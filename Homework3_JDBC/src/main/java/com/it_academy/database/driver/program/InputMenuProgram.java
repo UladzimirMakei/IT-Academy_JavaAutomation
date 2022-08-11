@@ -2,11 +2,12 @@ package com.it_academy.database.driver.program;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
+
 import static java.lang.System.out;
 
 public class InputMenuProgram {
 
-    public static void printMenu () {
+    public static void printMenu() {
         System.out.println("""
                 Please enter an action:\s
                 1 - Register new user
@@ -37,9 +38,9 @@ public class InputMenuProgram {
         return scanner.nextInt();
     }
 
-    public static boolean isInputCorrect (int operationInput) {
+    public static boolean isInputCorrect(int operationInput) {
         boolean result;
-        if (isInputWithinNumberOfActions(operationInput)){
+        if (isInputWithinNumberOfActions(operationInput)) {
             result = true;
         } else {
             out.println("Your input is not correct. Please try again\n");
@@ -48,7 +49,7 @@ public class InputMenuProgram {
         return result;
     }
 
-    public static boolean isInputWithinNumberOfActions (int operationInput) {
+    public static boolean isInputWithinNumberOfActions(int operationInput) {
         return operationInput == 1 || operationInput == 2 || operationInput == 3 ||
                 operationInput == 4 || operationInput == 5;
     }

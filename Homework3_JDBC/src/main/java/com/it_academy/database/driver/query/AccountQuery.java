@@ -57,13 +57,14 @@ public class AccountQuery {
             closeStatement(preparedStatement);
         }
     }
+
     public void showCurrentAccount(Account account, Connection connection) throws SQLException {
         try {
             statement = connection.createStatement();
             ResultSet resultSet = statement.executeQuery(
                     "SELECT * FROM ACCOUNTS WHERE currency = " + "'" + account.getCurrency()
                             + "'" + "AND userId = " + "'" + account.getUserId() + "'");
-                out.println("----------------" +
+            out.println("----------------" +
                     "\nYour account:");
 
             while (resultSet.next()) {

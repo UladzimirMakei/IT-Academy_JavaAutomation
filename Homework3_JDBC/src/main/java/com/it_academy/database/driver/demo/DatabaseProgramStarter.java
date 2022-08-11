@@ -5,7 +5,9 @@ import com.it_academy.database.driver.query.AccountQuery;
 import com.it_academy.database.driver.query.TransactionQuery;
 import com.it_academy.database.driver.query.UserQuery;
 import com.it_academy.database.driver.tables.Account;
+
 import java.sql.*;
+
 import static com.it_academy.database.driver.program.InputMenuProgram.inputOperation;
 import static com.it_academy.database.driver.service.DriverConnection.isJDBCDriverRegistered;
 import static java.lang.System.*;

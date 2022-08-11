@@ -1,96 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="980de90d-6f1e-4442-8553-4b07001cc070" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Calculator.java" beforeDir="false" afterPath="$PROJECT_DIR$/Calculator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CalculatorInputReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/CalculatorInputReader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CalculatorRun.java" beforeDir="false" afterPath="$PROJECT_DIR$/CalculatorRun.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Homework2_JUnit/src/main/java/com/it_academy/calculator/Calculator.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Homework2_JUnit/src/main/java/com/it_academy/calculator/frame/Calculator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Homework2_JUnit/src/main/java/com/it_academy/calculator/CalculatorInputOperationReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Homework2_JUnit/src/main/java/com/it_academy/calculator/frame/CalculatorInputOperationReader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Homework2_JUnit/src/main/java/com/it_academy/calculator/CalculatorInputValueReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Homework2_JUnit/src/main/java/com/it_academy/calculator/frame/CalculatorInputValueReader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Homework2_JUnit/src/main/java/com/it_academy/calculator/CalculatorRun.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Homework2_JUnit/src/main/java/com/it_academy/calculator/frame/CalculatorRun.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Homework2_JUnit/src/test/java/com/it_academy/calculator/CalculatorExceptionValuesTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Homework2_JUnit/src/test/java/com/it_academy/calculator/test/CalculatorExceptionValuesTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Homework2_JUnit/src/test/java/com/it_academy/calculator/CalculatorInputOperationReaderTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Homework2_JUnit/src/test/java/com/it_academy/calculator/test/CalculatorInputOperationReaderTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Homework2_JUnit/src/test/java/com/it_academy/calculator/CalculatorInputValueReaderTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Homework2_JUnit/src/test/java/com/it_academy/calculator/test/CalculatorInputValueReaderTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Homework2_JUnit/src/test/java/com/it_academy/calculator/CalculatorSimpleValuesTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Homework2_JUnit/src/test/java/com/it_academy/calculator/test/CalculatorSimpleValuesTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Homework2_JUnit/target/classes/com/it_academy/calculator/Calculator.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Homework2_JUnit/target/classes/com/it_academy/calculator/CalculatorInputOperationReader.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Homework2_JUnit/target/classes/com/it_academy/calculator/CalculatorInputValueReader.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Homework2_JUnit/target/classes/com/it_academy/calculator/CalculatorRun.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Homework2_JUnit/target/classes/junit-platform.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Homework2_JUnit/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Homework2_JUnit/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Homework2_JUnit/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Homework2_JUnit/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Homework2_JUnit/target/site/JUnit5Assertions Report.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Homework2_JUnit/target/site/css/maven-base.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Homework2_JUnit/target/site/css/maven-theme.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Homework2_JUnit/target/site/css/print.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Homework2_JUnit/target/site/css/site.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Homework2_JUnit/target/site/dependencies.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Homework2_JUnit/target/site/dependency-info.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Homework2_JUnit/target/site/images/close.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Homework2_JUnit/target/site/images/collapsed.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Homework2_JUnit/target/site/images/expanded.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Homework2_JUnit/target/site/images/external.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Homework2_JUnit/target/site/images/icon_error_sml.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Homework2_JUnit/target/site/images/icon_info_sml.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Homework2_JUnit/target/site/images/icon_success_sml.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Homework2_JUnit/target/site/images/icon_warning_sml.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Homework2_JUnit/target/site/images/logos/build-by-maven-black.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Homework2_JUnit/target/site/images/logos/build-by-maven-white.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Homework2_JUnit/target/site/images/logos/maven-feather.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Homework2_JUnit/target/site/images/newwindow.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Homework2_JUnit/target/site/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Homework2_JUnit/target/site/plugin-management.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Homework2_JUnit/target/site/plugins.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Homework2_JUnit/target/site/project-info.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Homework2_JUnit/target/site/project-reports.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Homework2_JUnit/target/site/summary.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Homework2_JUnit/target/site/xref-test/allclasses-frame.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Homework2_JUnit/target/site/xref-test/com/it_academy/calculator/CalculatorExceptionValuesTest.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Homework2_JUnit/target/site/xref-test/com/it_academy/calculator/CalculatorInputOperationReaderTest.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Homework2_JUnit/target/site/xref-test/com/it_academy/calculator/CalculatorInputValueReaderTest.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Homework2_JUnit/target/site/xref-test/com/it_academy/calculator/CalculatorSimpleValuesTest.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Homework2_JUnit/target/site/xref-test/com/it_academy/calculator/package-frame.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Homework2_JUnit/target/site/xref-test/com/it_academy/calculator/package-summary.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Homework2_JUnit/target/site/xref-test/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Homework2_JUnit/target/site/xref-test/overview-frame.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Homework2_JUnit/target/site/xref-test/overview-summary.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Homework2_JUnit/target/site/xref-test/stylesheet.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Homework2_JUnit/target/site/xref/allclasses-frame.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Homework2_JUnit/target/site/xref/com/it_academy/calculator/Calculator.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Homework2_JUnit/target/site/xref/com/it_academy/calculator/CalculatorInputOperationReader.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Homework2_JUnit/target/site/xref/com/it_academy/calculator/CalculatorInputValueReader.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Homework2_JUnit/target/site/xref/com/it_academy/calculator/CalculatorRun.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Homework2_JUnit/target/site/xref/com/it_academy/calculator/package-frame.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Homework2_JUnit/target/site/xref/com/it_academy/calculator/package-summary.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Homework2_JUnit/target/site/xref/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Homework2_JUnit/target/site/xref/overview-frame.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Homework2_JUnit/target/site/xref/overview-summary.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Homework2_JUnit/target/site/xref/stylesheet.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Homework2_JUnit/target/surefire-reports/TEST-com.it_academy.calculator.CalculatorSimpleValuesTest.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Homework2_JUnit/target/surefire-reports/com.it_academy.calculator.CalculatorSimpleValuesTest.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Homework2_JUnit/target/test-classes/com/it_academy/calculator/CalculatorExceptionValuesTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Homework2_JUnit/target/test-classes/com/it_academy/calculator/CalculatorInputOperationReaderTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Homework2_JUnit/target/test-classes/com/it_academy/calculator/CalculatorInputValueReaderTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Homework2_JUnit/target/test-classes/com/it_academy/calculator/CalculatorSimpleValuesTest.class" beforeDir="false" />
-    </list>
+    <list default="true" id="dcd54933-b8d1-4a0b-8178-01cd305e72f0" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
-  </component>
-  <component name="MarkdownSettingsMigration">
-    <option name="stateVersion" value="1" />
-  </component>
-  <component name="ProjectId" id="2CDlhU1UcMrW6IkCA6tKpw4WaV0" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectId" id="2DDlK2SGUII8Tyst13exI1jRvgw" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -98,45 +18,18 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
-    <property name="project.structure.side.proportion" value="0.0" />
-    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
-  </component>
-  <component name="RunManager">
-    <configuration name="Unnamed" type="MavenRunConfiguration" factoryName="Maven">
-      <MavenSettings>
-        <option name="myGeneralSettings" />
-        <option name="myRunnerSettings" />
-        <option name="myRunnerParameters">
-          <MavenRunnerParameters>
-            <option name="profiles">
-              <set />
-            </option>
-            <option name="goals">
-              <list />
-            </option>
-            <option name="pomFileName" />
-            <option name="profilesMap">
-              <map />
-            </option>
-            <option name="resolveToWorkspace" value="false" />
-            <option name="workingDirPath" value="" />
-          </MavenRunnerParameters>
-        </option>
-      </MavenSettings>
-      <method v="2" />
-    </configuration>
+    <property name="project.structure.side.proportion" value="0.2" />
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="980de90d-6f1e-4442-8553-4b07001cc070" name="Changes" comment="" />
-      <created>1658345155742</created>
+      <changelist id="dcd54933-b8d1-4a0b-8178-01cd305e72f0" name="Changes" comment="" />
+      <created>1660241470864</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1658345155742</updated>
+      <updated>1660241470864</updated>
     </task>
     <servers />
   </component>

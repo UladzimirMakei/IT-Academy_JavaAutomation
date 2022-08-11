@@ -3,6 +3,8 @@ package com.it_academy.database.driver.service;
 import java.sql.SQLException;
 import java.sql.Statement;
 
+import static java.lang.System.*;
+
 public class DriverConnection {
     private static final String JDBC_DRIVER = "org.sqlite.JDBC";
 
@@ -11,7 +13,7 @@ public class DriverConnection {
         try {
             Class.forName(JDBC_DRIVER);
         } catch (ClassNotFoundException e) {
-            System.out.println(e.getMessage() + " JDBC driver not found");
+            out.println(e.getMessage() + " JDBC driver not found");
             result = false;
         }
         return result;
